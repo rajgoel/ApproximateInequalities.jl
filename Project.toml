@@ -1,0 +1,13 @@
+name = "ApproximateInequalities"
+uuid = "f5f47f85-2b0e-4c7d-b7e5-8f2a1b5c9d8e"
+authors = ["Asvin Goel <asvin.goel@klu.org>"]
+version = "0.1.0"
+
+[compat]
+julia = "1.6"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
