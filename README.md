@@ -21,13 +21,13 @@ Floating-point comparisons may suffer from numerical inaccuracies:
 This module provides approximate inequality operators that complement Julia's `≈` (`isapprox`), enabling consistent and intuitive notation for floating point comparisons:
 
 
-| Operator | Tab Completion     | ASCII Alias          | Description                |
+| Operator | Tab Completion     | ASCII Alias          | Return value               |
 |----------|--------------------|----------------------|----------------------------|
-|    `⪅`   | `\lessapprox<TAB>` | `less_or_approx`     | `(x < y) \|\| (x ≈ y)`       |
-|    `⪆`   | `\gtrapprox<TAB>`  | `greater_or_approx`  | `(x > y) \|\| (x ≈ y)`       |
-|    `⪉`   | `\lnapprox<TAB>`   | `less_not_approx`    | `(x < y) && !(x ≈ y)`      |
-|    `⪊`   | `\gnapprox<TAB>`   | `greater_not_approx` | `(x > y) && !(x ≈ y)`      |
-|    `≉`   | `\notapprox<TAB>`  | `not_approx`         | `!(x ≈ y)`                 |
+| `x ⪅ y`  | `\lessapprox<TAB>` | `less_or_approx`     | `(x < y) \|\| (x ≈ y)`     |
+| `x ⪆ y`  | `\gtrapprox<TAB>`  | `greater_or_approx`  | `(x > y) \|\| (x ≈ y)`     |
+| `x ⪉ y`  | `\lnapprox<TAB>`   | `less_not_approx`    | `(x < y) && !(x ≈ y)`      |
+| `x ⪊ y`  | `\gnapprox<TAB>`   | `greater_not_approx` | `(x > y) && !(x ≈ y)`      |
+| `x ≉ y`  | `\notapprox<TAB>`  | `not_approx`         | `!(x ≈ y)`                 |
 
 
 ## Examples
