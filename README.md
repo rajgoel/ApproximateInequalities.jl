@@ -23,8 +23,8 @@ This module provides approximate inequality operators that complement Julia's `�
 
 | Operator | Tab Completion     | ASCII Alias          | Description                |
 |----------|--------------------|----------------------|----------------------------|
-|    `⪅`   | `\lessapprox<TAB>` | `less_or_approx`     | `(x < y) || (x ≈ y)`       |
-|    `⪆`   | `\gtrapprox<TAB>`  | `greater_or_approx`  | `(x > y) || (x ≈ y)`       |
+|    `⪅`   | `\lessapprox<TAB>` | `less_or_approx`     | `(x < y) \|\| (x ≈ y)`       |
+|    `⪆`   | `\gtrapprox<TAB>`  | `greater_or_approx`  | `(x > y) \|\| (x ≈ y)`       |
 |    `⪉`   | `\lnapprox<TAB>`   | `less_not_approx`    | `(x < y) && !(x ≈ y)`      |
 |    `⪊`   | `\gnapprox<TAB>`   | `greater_not_approx` | `(x > y) && !(x ≈ y)`      |
 |    `≉`   | `\notapprox<TAB>`  | `not_approx`         | `!(x ≈ y)`                 |
