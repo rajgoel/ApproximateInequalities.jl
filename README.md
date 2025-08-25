@@ -1,7 +1,5 @@
 # ApproximateInequalities.jl
 
-[![Build Status](https://github.com/rajgoel/ApproximateInequalities.jl/workflows/CI/badge.svg)](https://github.com/rajgoel/ApproximateInequalities.jl/actions)
-
 Floating-point comparisons may suffer from numerical inaccuracies:
 
 ```julia
