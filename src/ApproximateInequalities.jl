@@ -4,7 +4,6 @@
 Provides comparison operators that handle approximate inequality.
   
 Extends Julia's `≈` (isapprox) to inequality comparisons:
-- `≉` (\\notapprox<TAB>): `!(x ≈ y)`
 - `⪅` (\\lessapprox<TAB>): `(x < y) || (x ≈ y)`
 - `⪆` (\\gtrapprox<TAB>): `(x > y) || (x ≈ y)`  
 - `⪉` (\\lnapprox<TAB>): `(x < y) && !(x ≈ y)`
@@ -12,9 +11,6 @@ Extends Julia's `≈` (isapprox) to inequality comparisons:
 
 # Examples
 ```julia
-julia> 0.1 + 0.2 ≉ 0.3
-false
-
 julia> 0.1 + 0.2 ⪅ 0.3
 true
 
@@ -30,7 +26,7 @@ false
 """
 module ApproximateInequalities
 
-export less_or_approx, greater_or_approx, less_not_approx, greater_not_approx, not_approx, ⪅, ⪆, ⪉, ⪊, ≉
+export less_or_approx, greater_or_approx, less_not_approx, greater_not_approx, ⪅, ⪆, ⪉, ⪊
 
 """
     less_or_approx(x, y; kwargs...)
@@ -148,34 +144,5 @@ true
 ```
 """
 const ⪊ = greater_not_approx
-
-"""
-    not_approx(x, y; kwargs...)
-
-Not approximately equal comparison operator.
-Returns `!(x ≈ y)` (using `isapprox`).
-
-All keyword arguments are passed to `isapprox` when checking approximate equality.
-"""
-function not_approx(x, y; kwargs...)
-    return !isapprox(x, y; kwargs...)
-end
-
-"""
-    ≉(x, y; kwargs...)
-
-Not approximately equal comparison operator.
-Unicode alias for [`not_approx`](@ref). Type `\\notapprox<TAB>` in the REPL to get the ≉ symbol.
-
-# Examples
-```julia
-julia> 0.1 + 0.2 ≉ 0.3
-false
-
-julia> 0.1 + 0.2 ≠ 0.3
-true
-```
-"""
-const ≉ = not_approx
 
 end # module ApproximateInequalities

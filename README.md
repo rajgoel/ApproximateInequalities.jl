@@ -14,6 +14,7 @@ Floating-point comparisons may suffer from numerical inaccuracies:
 ```julia
 # isapprox (built-in Julia)
 0.1 + 0.2 ≈ 0.3     # true 
+0.1 + 0.2 ≉ 0.3     # false 
 ```
 
 This module provides approximate inequality operators that complement Julia's `≈` (`isapprox`), enabling consistent and intuitive notation for floating point comparisons:
@@ -25,7 +26,6 @@ This module provides approximate inequality operators that complement Julia's `�
 | `x ⪆ y`  | `\gtrapprox<TAB>`  | `greater_or_approx`  | `(x > y) \|\| (x ≈ y)`     |
 | `x ⪉ y`  | `\lnapprox<TAB>`   | `less_not_approx`    | `(x < y) && !(x ≈ y)`      |
 | `x ⪊ y`  | `\gnapprox<TAB>`   | `greater_not_approx` | `(x > y) && !(x ≈ y)`      |
-| `x ≉ y`  | `\notapprox<TAB>`  | `not_approx`         | `!(x ≈ y)`                 |
 
 
 ## Examples
@@ -48,10 +48,6 @@ using ApproximateInequalities
 # Greater-than and not approximately equal
 0.1 + 0.2 ⪊ 0.3  # false (approximately equal)  
 0.1 + 0.2 > 0.3  # true  (regular comparison)
-
-# Not approximately equal
-0.1 + 0.2 ≉ 0.3  # false (approximately equal)
-0.1 + 0.2 ≠ 0.3  # true  (regular comparison)
 ```
 
 ## Tolerance options
@@ -60,10 +56,10 @@ All operators accept the same keyword arguments as `isapprox`:
 
 ```julia
 # Using function call syntax for kwargs
-not_approx(1.0, 1.1; rtol=0.2)
+less_or_approx(1.0, 1.1; rtol=0.2)
 
 # Absolute tolerance
-not_approx(1.0, 1.001; atol=0.01)
+less_or_approx(1.0, 1.001; atol=0.01)
 ```
 
 ## Installation
